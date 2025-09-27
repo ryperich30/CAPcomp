@@ -18,6 +18,7 @@
     "typescript": "5.6.3",
     "@types/react": "18.3.10",
     "@types/node": "20.12.7",
-    "prettier": "3.3.3"
+    "prettier": "3.3.3",
+    "eslint": "8.57.0"
   }
 }
