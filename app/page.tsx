@@ -15,7 +15,7 @@ export default async function Page() {
       <Image 
         src="/capcomp-logo.png" 
         alt="CAPcomp Logo" 
-        width={200} 
+        width={600} 
         height={200} 
         priority
       />
