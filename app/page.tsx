@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { createClient } from '@supabase/supabase-js'
 
 const supabase = createClient(
@@ -6,17 +7,21 @@ const supabase = createClient(
 )
 
 export default async function Page() {
-  const { data: players, error } = await supabase
-    .from('players')
-    .select('id,name,team')
-    .order('name', { ascending: true })
+  const { data: players } = await supabase.from('players').select('*')
 
   return (
-    <main style={{ padding: 24 }}>
+    <main style={{ padding: 24, fontFamily: 'system-ui, sans-serif' }}>
+      {/* Logo at top */}
+      <Image 
+        src="/capcomp-logo.png" 
+        alt="CAPcomp Logo" 
+        width={200} 
+        height={200} 
+        priority
+      />
+
       <h1>CAPcomp</h1>
       <h2>Players (from Supabase)</h2>
-
-      {error && <p style={{ color: 'crimson' }}>Error: {error.message}</p>}
 
       {!players?.length ? (
         <p>No players found yet.</p>
