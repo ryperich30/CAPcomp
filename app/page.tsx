@@ -12,15 +12,11 @@ export default async function Page() {
     .order('name', { ascending: true })
 
   return (
-    <main style={{ padding: 24, fontFamily: 'system-ui, -apple-system, Segoe UI, Roboto, Arial' }}>
+    <main style={{ padding: 24 }}>
       <h1>CAPcomp</h1>
       <h2>Players (from Supabase)</h2>
 
-      {error && (
-        <p style={{ color: 'crimson' }}>
-          Error: {error.message}
-        </p>
-      )}
+      {error && <p style={{ color: 'crimson' }}>Error: {error.message}</p>}
 
       {!players?.length ? (
         <p>No players found yet.</p>
