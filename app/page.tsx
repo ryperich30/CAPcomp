@@ -17,6 +17,7 @@ export default async function Page() {
         alt="CAPcomp Logo" 
         width={600} 
         height={200} 
+        style=({width: '100%', height: 'auto'})
         priority
       />
 
