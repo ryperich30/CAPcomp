@@ -42,7 +42,6 @@ export default async function HomePage() {
 
       {/* Hero copy */}
       <section className="hero">
-        <h1>CAPcomp</h1>
         <p>Salary cap intelligence, rosters, lines & stats</p>
       </section>
 
