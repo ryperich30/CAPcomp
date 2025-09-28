@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import { createClient } from '@supabase/supabase-js'
-import LeagueCard from './components/LeagueCard'
+import LeagueCard from './components/LeagueCard.tsx'
 
 const supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_URL!,
