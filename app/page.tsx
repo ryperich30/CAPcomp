@@ -65,7 +65,7 @@ export default async function HomePage() {
                 borderRadius: 8,
               }}
             >
-              {src ? <img src={src} alt={`${l.name} logo`} width={40} height={40} /> : null}
+              {src ? <img src={src} alt={`${l.name} logo`} maxwidth={60} height= 'auto' /> : null}
               <span style={{ fontSize: 18 }}>{l.name}</span>
             </Link>
           )
