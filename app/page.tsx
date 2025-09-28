@@ -7,30 +7,28 @@ const supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
 )
 
-// hard map logos so we don't depend on DB paths/casing
+// explicit logo paths (match filenames in /public/logos)
 const leagueLogos: Record<string, string> = {
   nhl: '/logos/NHL.png',
   ahl: '/logos/AHL.png',
   echl: '/logos/ECHL.png',
 }
 
-// enforce custom order: NHL -> AHL -> ECHL
+// force order: NHL -> AHL -> ECHL
 const leagueOrder: Record<string, number> = { nhl: 1, ahl: 2, echl: 3 }
 
 export default async function HomePage() {
   const { data: leagues } = await supabase
     .from('leagues')
     .select('code,name')
-    // DB ordering can vary; we'll sort in JS to be explicit
-    // .order('name')
 
   const ordered = (leagues ?? []).slice().sort((a: any, b: any) => {
     return (leagueOrder[a.code] ?? 99) - (leagueOrder[b.code] ?? 99)
   })
 
   return (
-    <main>
-      {/* centered CAPcomp logo */}
+    <main style={{ padding: 24 }}>
+      {/* Centered CAPcomp logo */}
       <div style={{ display: 'flex', justifyContent: 'center', marginBottom: 24 }}>
         <Image
           src="/capcomp-logo.png"
@@ -43,6 +41,7 @@ export default async function HomePage() {
       </div>
 
       <h2>Leagues</h2>
+
       <div
         style={{
           display: 'grid',
@@ -51,7 +50,7 @@ export default async function HomePage() {
         }}
       >
         {ordered.map((l: any) => {
-          const src = leagueLogos[l.code] // guaranteed path
+          const src = leagueLogos[l.code]
           return (
             <Link
               key={l.code}
@@ -63,9 +62,16 @@ export default async function HomePage() {
                 padding: 12,
                 border: '1px solid #eee',
                 borderRadius: 8,
+                textDecoration: 'none',
               }}
             >
-              {src ? <img src={src} alt={`${l.name} logo`} maxwidth={60} height= 'auto' /> : null}
+              {src ? (
+                <img
+                  src={src}
+                  alt={`${l.name} logo`}
+                  style={{ height: 32, width: 'auto', objectFit: 'contain', display: 'block' }}
+                />
+              ) : null}
               <span style={{ fontSize: 18 }}>{l.name}</span>
             </Link>
           )
