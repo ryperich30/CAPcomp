@@ -19,7 +19,7 @@ export default async function TeamPage({ params }:{ params: Promise<{ slug: stri
   if (error) return <main><p>Error: {error.message}</p></main>
   if (!team) return <main><h1>Team not found</h1></main>
 
-  const season = '2024-25'
+  const season = '2025-26'
 
   const tabs = [
     { key:'roster',    label:'Roster',    content: <RosterTable teamId={team.id} season={season} /> },
