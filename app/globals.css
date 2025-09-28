@@ -1,11 +1,13 @@
-:root{
-  --bg:#ffffff; --fg:#111111; --muted:#616161;
-  --card:#fbfbfb; --border:#ebebeb;
-  --primary:#0038A8; /* royal blue */
-  --accent:#D50000;  /* red */
-  --link:var(--primary);
+:root {
+  --pad: 24px;
+  --maxw: 1100px;
+  --bg: #ffffff;
+  --fg: #111111;
+  --muted: #666;
+  --card: #fafafa;
+  --border: #eaeaea;
+  --link: #0b5fff;
 }
-
 
 * { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; }
