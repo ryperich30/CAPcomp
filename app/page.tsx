@@ -7,7 +7,7 @@ const supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
 )
 
-// explicit logo paths (match filenames in /public/logos)
+// explicit logo paths (match /public/logos filenames & casing)
 const leagueLogos: Record<string, string> = {
   nhl: '/logos/NHL.png',
   ahl: '/logos/AHL.png',
@@ -27,9 +27,9 @@ export default async function HomePage() {
   })
 
   return (
-    <main style={{ padding: 24 }}>
-      {/* Centered CAPcomp logo */}
-      <div style={{ display: 'flex', justifyContent: 'center', marginBottom: 24 }}>
+    <main>
+      {/* Top logo */}
+      <div className="center-logo">
         <Image
           src="/capcomp-logo.png"
           alt="CAPcomp Logo"
@@ -40,36 +40,23 @@ export default async function HomePage() {
         />
       </div>
 
-      <h2>Leagues</h2>
+      {/* Hero copy */}
+      <section className="hero">
+        <h1>CAPcomp</h1>
+        <p>Salary cap intelligence, rosters, lines & stats — NHL, AHL, ECHL</p>
+      </section>
 
-      <div
-        style={{
-          display: 'grid',
-          gap: 12,
-          gridTemplateColumns: 'repeat(auto-fit, minmax(220px,1fr))',
-        }}
-      >
+      <h2>Leagues</h2>
+      <div className="grid">
         {ordered.map((l: any) => {
           const src = leagueLogos[l.code]
           return (
-            <Link
-              key={l.code}
-              href={`/league/${l.code}`}
-              style={{
-                display: 'flex',
-                alignItems: 'center',
-                gap: 12,
-                padding: 12,
-                border: '1px solid #eee',
-                borderRadius: 8,
-                textDecoration: 'none',
-              }}
-            >
+            <Link key={l.code} href={`/league/${l.code}`} className="card">
               {src ? (
                 <img
                   src={src}
                   alt={`${l.name} logo`}
-                  style={{ height: 32, width: 'auto', objectFit: 'contain', display: 'block' }}
+                  className="logo-fixed-h"
                 />
               ) : null}
               <span style={{ fontSize: 18 }}>{l.name}</span>
