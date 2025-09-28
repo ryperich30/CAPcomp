@@ -11,21 +11,25 @@ export default async function HomePage() {
   const { data: leagues } = await supabase
     .from('leagues')
     .select('code,name,logo_url')
+    .order('name')
+
   return (
-    <main style={{ padding: 24 }}>
+    <main>
       <div style={{ display:'flex', justifyContent:'center', marginBottom:24 }}>
-        <Image src="/capcomp-logo.png" alt="CAPcomp Logo" width={300} height={100}
-               style={{ width:'100%', maxWidth:300, height:'auto' }} priority />
+        <Image src="/capcomp-logo.png" alt="CAPcomp Logo" width={600} height={200}
+               style={{ width:'100%', maxWidth:600, height:'auto' }} priority />
       </div>
 
       <h2>Leagues</h2>
-      <ul>
+      <div style={{ display:'grid', gap:12, gridTemplateColumns:'repeat(auto-fit, minmax(220px,1fr))' }}>
         {leagues?.map((l:any) => (
-          <li key={l.code}>
-            <Link href={`/league/${l.code}`}>{l.name}</Link>
-          </li>
+          <Link key={l.code} href={`/league/${l.code}`}
+            style={{ display:'flex', alignItems:'center', gap:12, padding:12, border:'1px solid #eee', borderRadius:8 }}>
+            {l.logo_url ? <img src={l.logo_url} alt={`${l.name} logo`} width={40} /> : null}
+            <span style={{ fontSize:18 }}>{l.name}</span>
+          </Link>
         ))}
-      </ul>
+      </div>
     </main>
   )
 }
