@@ -14,7 +14,7 @@ export default async function HomePage() {
   return (
     <main style={{ padding: 24 }}>
       <div style={{ display:'flex', justifyContent:'center', marginBottom:24 }}>
-        <Image src="/capcomp-logo.png" alt="CAPcomp Logo" width={600} height={200}
+        <Image src="/capcomp-logo.png" alt="CAPcomp Logo" width={300} height={100}
                style={{ width:'100%', maxWidth:600, height:'auto' }} priority />
       </div>
 
