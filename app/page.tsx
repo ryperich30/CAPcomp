@@ -43,10 +43,10 @@ export default async function HomePage() {
       {/* Hero copy */}
       <section className="hero">
         <h1>CAPcomp</h1>
-        <p>Salary cap intelligence, rosters, lines & stats — NHL, AHL, ECHL</p>
+        <p>Salary cap intelligence, rosters, lines & stats</p>
       </section>
 
-      <h2>Leagues</h2>
+      <h2>HOME</h2>
       <div className="grid">
         {ordered.map((l: any) => {
           const src = leagueLogos[l.code]
