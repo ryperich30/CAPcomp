@@ -1,12 +1,8 @@
-:root {
-  --pad: 24px;
-  --maxw: 1100px;
-  --bg: #ffffff;
-  --fg: #111111;
-  --muted: #666;
-  --card: #fafafa;
-  --border: #eaeaea;
-  --link: #0b5fff;
+:root{
+  --bg:#ffffff; --fg:#0b1220; --muted:#667085;
+  --card:#f7f9fc; --border:#e6edf5;
+  --primary:#0b5fff; --accent:#00b3ff; /* ice blue */
+  --link:var(--primary);
 }
 
 * { box-sizing: border-box; }
