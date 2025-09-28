@@ -1,9 +1,11 @@
 :root{
-  --bg:#ffffff; --fg:#0b1220; --muted:#667085;
-  --card:#f7f9fc; --border:#e6edf5;
-  --primary:#0b5fff; --accent:#00b3ff; /* ice blue */
-  --link:var(--primary);
+  --bg:#ffffff; --fg:#0b1220; --muted:#6b7280;
+  --card:#fafafa; --border:#e5e7eb;
+  --primary:#111827; --accent:#0ea5e9; /* cyan highlight */
+  --link:#0ea5e9;
 }
+.header-dark{ background:#111827; color:#e5e7eb; }
+
 
 * { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; }
