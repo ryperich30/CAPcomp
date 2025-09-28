@@ -1,10 +1,10 @@
 :root{
-  --bg:#ffffff; --fg:#0b1220; --muted:#6b7280;
-  --card:#fafafa; --border:#e5e7eb;
-  --primary:#111827; --accent:#0ea5e9; /* cyan highlight */
-  --link:#0ea5e9;
+  --bg:#ffffff; --fg:#111111; --muted:#616161;
+  --card:#fbfbfb; --border:#ebebeb;
+  --primary:#0038A8; /* royal blue */
+  --accent:#D50000;  /* red */
+  --link:var(--primary);
 }
-.header-dark{ background:#111827; color:#e5e7eb; }
 
 
 * { box-sizing: border-box; }
