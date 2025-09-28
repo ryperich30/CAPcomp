@@ -2,7 +2,7 @@ import Link from 'next/link'
 
 export default function Header() {
   return (
-    <nav style={{ padding: 12, borderBottom: '1px solid #eee' }}>
+    <nav className="nav">
       <Link href="/">Home</Link>{' | '}
       <Link href="/league/nhl">NHL</Link>{' | '}
       <Link href="/league/ahl">AHL</Link>{' | '}
