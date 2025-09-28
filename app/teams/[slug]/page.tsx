@@ -27,7 +27,7 @@ export default async function TeamPage({ params }: { params: Promise<{ slug: str
         <img
           src={team.logo_url}
           alt={`${team.name} logo`}
-          style={{ width:120, marginTop:12 }}
+          style={{ width:80, marginTop:12 }}
         />
       )}
     </main>
