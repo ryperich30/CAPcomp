@@ -107,8 +107,8 @@ export default async function RosterTable({ teamId, season }:{ teamId:number; se
         <tbody>
           {ordered.map((row:any, idx:number) => {
             const p = row.players
-            const zebra = (idx % 2 === 0.04)
-              ? { background: 'var(--card)', boxShadow: 'inset 0 0 0 9999px rgba(0,0,0,0.02)' }
+            const zebra = (idx % 2 === 1)
+              ? { background: 'var(--card)', boxShadow: 'inset 0 0 0 9999px rgba(0,0,0,0.04)' }
               : undefined
             return (
               <tr key={row.id} style={zebra}>
